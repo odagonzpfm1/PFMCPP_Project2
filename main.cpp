@@ -15,15 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ unsigned int
+ float
+ double
+ bool
+ char
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -64,10 +61,31 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    int temperature = -70;
+    int age = 21;
+    int savings = 10000;
+
+    unsigned int numberOfPages = 300;
+    unsigned int numberOfStudents = 33;
+    unsigned int typesOfFruits = 7;
+
+    float distance = 12.1f;
+    float weight = 50.5f;
+    float temperatureInCelcius = -17.3f;
+
+    double pi = 3.1415926535;
+    double randomNumber = 0.12845630984;
+    double gravity = 9.8;
+
+    bool isHeavy = true;
+    bool isHungry = false;
+    bool isPlayingNotes = true;
+
+    char grade = 'A';
+    char gender = 'M';
+    char color = 'R';
+    ignoreUnused(number, temperature, age, savings, numberOfPages, numberOfStudents, typesOfFruits, distance, weight, temperatureInCelcius, pi, randomNumber, gravity, isHeavy, isHungry, isPlayingNotes, grade, gender, color); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,42 +102,89 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+bool isHeavy(float weight)
+{
+    ignoreUnused(weight);
+    return {};
+}
 
 /*
  2)
  */
+int distanceInFeet(int startPoint, int endPoint)
+{
+    ignoreUnused(startPoint, endPoint);
+    return {};
+}
 
 /*
  3)
  */
+float addNumbers(float num1, float num2)
+{
+    ignoreUnused(num1, num2);
+    return {};
+}
 
 /*
  4)
  */
+float subtractNumbers(float num1, float num2)
+{
+    ignoreUnused(num1, num2);
+    return {};
+}
 
 /*
  5)
  */
+float multiplyNumbers(float num1, float num2)
+{
+    ignoreUnused(num1, num2);
+    return {};
+}
 
 /*
  6)
  */
+void startInstrument(int instrumentType, bool midiCapable, float startPosition = 0)
+{
+    ignoreUnused(instrumentType, midiCapable, startPosition);
+}
 
 /*
  7)
  */
-
+void startPlayingSong(char song)
+{
+    ignoreUnused(song);
+}
 /*
  8)
  */
+unsigned int numberOfPensInDesk(int deskNum, int roomNum = 111, int floor = 1)
+{
+    ignoreUnused(deskNum, roomNum, floor);
+    return {};
+}
 
 /*
  9)
  */
+void changeTempo()
+{
+    ignoreUnused();
+}
 
 /*
  10)
  */
+char rowLetter(int rowNum)
+{
+    ignoreUnused(rowNum);
+    return {};
+}
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -141,27 +206,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto heavyBackpack = isHeavy(55.5f);
     //2)
-    
+    auto distanceFromTarget = distanceInFeet(12, 34);
     //3)
-    
+    auto totalSum = addNumbers(1.2f, 2.3f);
     //4)
-    
+    auto difference = subtractNumbers(1.2f, 2.3f);
     //5)
-    
+    auto product = multiplyNumbers(1.2f, 2.3f);
     //6)
-    
+    startInstrument(6, true, 50.0f);
     //7)
-    
+    startPlayingSong('E');
     //8)
-    
+    auto pensInTonysDesk = numberOfPensInDesk(6, 7, 8);
     //9)
-    
+    changeTempo();
     //10)
+    auto rentedBookRow = rowLetter(6);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, heavyBackpack, distanceFromTarget, totalSum, difference, product, pensInTonysDesk, rentedBookRow);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
